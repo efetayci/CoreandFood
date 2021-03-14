@@ -1,0 +1,30 @@
+﻿
+@model List<CoreandFood.Data.Models.Food>
+
+@{
+    ViewData["Title"] = "FoodList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>All Drinks Are Shown here</h2>
+<br />
+
+@{ 
+    foreach (var item in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@item.ImageUrl" style="height:110px; width:150px;" alt=""/>
+                <div class="caption">
+                    <h3 class="pull-right">@item.Price.ToString("c")</h3>
+                </div>
+                <h3>
+                    <a>@item.Name</a>
+                </h3>
+                <p>@item.Description</p>
+            </div>
+        </div>
+    }
+}
+
